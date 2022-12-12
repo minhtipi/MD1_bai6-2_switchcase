@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<label> Nhập tháng</label>
+<input id="sothang" type="number">
+<button onclick="soThang()">so ngay trong thang</button>
+<p id="soNgay"></p>
+<body>
+<script>
+  function soThang() {
+    let month= +document.getElementById('sothang').value;
+    console.log('month =====>',month);
+    switch (month) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        document.getElementById('soNgay').innerHTML="thang " + month + " có 31 ngày";
+        break;
+
+      case 2:
+        document.getElementById('soNgay').innerHTML="thang " + month + " có 28 hoặc 29 ngày";
+        break;
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        document.getElementById('soNgay').innerHTML="tháng " + month + " có 30 ngày";
+      default:
+        document.getElementById('soNgay').innerHTML="không có tháng này";
+
+    }
+
+
+  }
+</script>
+
+</body>
+</html>
